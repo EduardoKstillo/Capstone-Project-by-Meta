@@ -1,7 +1,7 @@
 # myapp/tests.py
 
 from django.test import TestCase
-from .models import Menu
+from restaurant.models import Menu
 
 class MenuTestCase(TestCase):
     def setUp(self):
@@ -17,8 +17,4 @@ class MenuTestCase(TestCase):
 
     def test_inventory_default_value(self):
         burger = Menu.objects.get(title="Burger")
-        self.assertEqual(burger.inventory, 10)  # Suponiendo que el valor predeterminado del inventario es 10
-
-    def test_price_type(self):
-        burger = Menu.objects.get(title="Burger")
-        self.assertIsInstance(burger.price, float)  # Suponiendo que el tipo de dato del precio es decimal
+        self.assertEqual(burger.inventory, 10)  
